@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Notice About This Project!
+
+This project was created as Proof of Knowledge for Unyleya full stack MBA Development Course, completed in 2024.
+
 ## Available Scripts
 
 In the project directory, you can run:
