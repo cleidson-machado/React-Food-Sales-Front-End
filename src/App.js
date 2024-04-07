@@ -2,6 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  //## React project very slow npm run start
+  //https://stackoverflow.com/questions/71770298/npm-start-taking-way-too-long
   return (
     <div className="App">
       <header className="App-header">
