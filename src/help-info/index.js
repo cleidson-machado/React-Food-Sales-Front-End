@@ -2,7 +2,7 @@ import "./style.css";
 
 const HelpInfo = () => {
   return (
-    <div>
+    <div className="container">
       <h1>HELP-INFO-PAGE</h1>
     </div>
   );
