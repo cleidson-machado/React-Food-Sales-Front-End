@@ -1,29 +1,25 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./style.css";
-import { AuthContext } from "../core/context/AuthContext";
 
-//## APP _STEP 04 | FREE ROUTE
+//By My Selft Whith React Docs - Whith Error!
 
 function Login() {
-  const { loginUser } = useContext(AuthContext);
-
   const [logininfo, setlogininfo] = useState({
     email: "",
     password: "",
   });
 
-  const handleEmailChange = (event) => {
+  function handleEmailChange(event) {
     setlogininfo({ ...logininfo, email: event.target.value });
-  };
+  }
 
-  const handlePasswordChange = (event) => {
+  function handlePasswordChange(event) {
     setlogininfo({ ...logininfo, password: event.target.value });
-  };
+  }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Usuer ${logininfo.email} is logged with success!`);
-    loginUser(logininfo);
+    alert(`The data send is: ${Object.values(logininfo)}`);
   };
 
   return (
@@ -31,11 +27,17 @@ function Login() {
       <h1>LOGIN-PAGE</h1>
       <form className="loginform" onSubmit={handleSubmit}>
         <label htmlFor="email-id">Login Email:</label>
-        <input id="email-id" type="email" onChange={handleEmailChange}></input>
+        <input
+          id="email-id"
+          type="text"
+          value={logininfo.email}
+          onChange={handleEmailChange}
+        ></input>
         <label htmlFor="password-id">Password</label>
         <input
           id="password-id"
           type="password"
+          value={logininfo.password}
           onChange={handlePasswordChange}
         ></input>
         <button type="submit">Login-Action</button>

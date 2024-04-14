@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./style.css";
 
+//## APP _STEP 04 | FREE ROUTE
+
 const Home = () => {
   return (
     <div className="container">

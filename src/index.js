@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import NavMenuCSS2 from "./core/components/NavMenuCSS2";
+
+//## APP _STEP 00 | START APP
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <NavMenuCSS2 />
       <App />
     </BrowserRouter>
   </React.StrictMode>

@@ -1,29 +1,27 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./style.css";
-import { AuthContext } from "../core/context/AuthContext";
 
-//## APP _STEP 04 | FREE ROUTE
+//Made by mySelf and shows data object as the same way of The Teacher Example...
 
 function Login() {
-  const { loginUser } = useContext(AuthContext);
-
   const [logininfo, setlogininfo] = useState({
     email: "",
     password: "",
   });
 
-  const handleEmailChange = (event) => {
+  function handleEmailChange(event) {
     setlogininfo({ ...logininfo, email: event.target.value });
-  };
+  }
 
-  const handlePasswordChange = (event) => {
+  function handlePasswordChange(event) {
     setlogininfo({ ...logininfo, password: event.target.value });
-  };
+  }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Usuer ${logininfo.email} is logged with success!`);
-    loginUser(logininfo);
+    alert(`The data send is: ${logininfo.email} and: ${logininfo.password}`);
+    //alert(`Usuer ${logininfo.email} is logged with success!`);
+    //console.log(logininfo);
   };
 
   return (
