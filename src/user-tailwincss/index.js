@@ -1,4 +1,8 @@
 import { useState } from "react";
+import userRegister from "../core/services/user/user-register";
+
+//#### I PREFER TO USE IT LIKE THIS THAN FROM event.target.name FROM HTML...
+//EXAMPLE event.target.name FROM HTML: https://blog.logrocket.com/how-to-use-axios-post-requests/
 
 function UserTailWindCss() {
   const [registerData, setRegisterData] = useState({
@@ -12,41 +16,35 @@ function UserTailWindCss() {
     levelAccess: "BUYER-Level",
   });
 
+  //#### I PREFER TO USE IT LIKE THIS THAN FROM event.target.name FROM HTML
   const handleName = (event) => {
     setRegisterData({ ...registerData, name: event.target.value });
   };
 
+  //#### I PREFER TO USE IT LIKE THIS THAN FROM event.target.name FROM HTML
   const handleSurname = (event) => {
     setRegisterData({ ...registerData, surname: event.target.value });
   };
 
+  //#### I PREFER TO USE IT LIKE THIS THAN FROM event.target.name FROM HTML
   const handleCpf = (event) => {
     setRegisterData({ ...registerData, cpf: event.target.value });
   };
 
+  //#### I PREFER TO USE IT LIKE THIS THAN FROM event.target.name FROM HTML
   const handleEmail = (event) => {
     setRegisterData({ ...registerData, email: event.target.value });
   };
 
+  //#### I PREFER TO USE IT LIKE THIS THAN FROM event.target.name FROM HTML
   const handlePassword = (event) => {
     setRegisterData({ ...registerData, password: event.target.value });
   };
 
+  //#### USING AXIOS...
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3000/v1/api/user/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(registerData),
-    });
-
-    if (response.status === 200) {
-      alert("Create With Success");
-    }
-
-    console.log(response);
+    await userRegister(registerData);
   };
 
   return (
