@@ -1,6 +1,6 @@
 import "./App.css";
-import Home from "./home/index";
-import Login from "./login/index";
+//import Home from "./home/index";
+//import Login from "./login/index";
 import Pizza from "./products/pizza/index";
 import NotFound from "./404-notFound/index";
 import { Route, Routes } from "react-router-dom";
@@ -9,6 +9,9 @@ import Products from "./products/all-of-them/index";
 import NavMenuCSS2 from "./core/components/NavMenuCSS2/index";
 import { AuthProvider } from "./core/context/AuthContext";
 import ProtectedRoute from "./core/utils/ProtectedRoute";
+import HomeTailWindCss from "./home-tailwincss/index";
+import LoginTailWindCss from "./login-tailwincss/index";
+import UserTailWindCss from "./user-tailwincss/index";
 
 //## APP _STEP 01 | ROUTES LIST
 
@@ -18,8 +21,9 @@ function App() {
       <AuthProvider>
         <NavMenuCSS2 />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<HomeTailWindCss />} />
+          <Route path="/login" element={<LoginTailWindCss />} />
+          <Route path="/user-register" element={<UserTailWindCss />} />
           <Route
             path="/products/"
             element={

@@ -33,6 +33,8 @@ const AuthProvider = ({ children }) => {
     const data = await response.json();
     localStorage.setItem("userInfo", JSON.stringify(data));
 
+    console.log(JSON.stringify(credentials));
+
     navigate("/");
   };
 
