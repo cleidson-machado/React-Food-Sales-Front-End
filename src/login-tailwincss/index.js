@@ -22,7 +22,6 @@ function LoginTailWindCss() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    alert(`Usuer ${logininfo.email} is logged with success!`);
     loginUser(logininfo);
   };
   return (

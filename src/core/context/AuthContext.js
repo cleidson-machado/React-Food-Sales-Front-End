@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
+import userLoginAuth from "../services/user/user-login-auth";
 
 //## APP _STEP 02 | CONTEXT LOGIC
 
@@ -22,20 +23,10 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const loginUser = async (credentials) => {
-    const response = await fetch("http://localhost:3000/v1/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(credentials),
-    });
-
-    const data = await response.json();
-    localStorage.setItem("userInfo", JSON.stringify(data));
-
-    console.log(JSON.stringify(credentials));
-
-    navigate("/");
+    await userLoginAuth(credentials);
+    if (userLogged) {
+      navigate("/");
+    }
   };
 
   if (loaging) {
