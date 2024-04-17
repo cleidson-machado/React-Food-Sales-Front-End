@@ -11,7 +11,9 @@ import { AuthProvider } from "./core/context/AuthContext";
 import ProtectedRoute from "./core/utils/ProtectedRoute";
 import HomeTailWindCss from "./home-tailwincss/index";
 import LoginTailWindCss from "./login-tailwincss/index";
-import UserTailWindCss from "./user-tailwincss/index";
+import UserRegisterTailWindCss from "./user-create-tailwincss/index";
+import UserListTailWindCss from "./user-list-tailwincss/index";
+import UserEditTailWindCss from "./user-edit-tailwincss/index";
 
 //## APP _STEP 01 | ROUTES LIST
 
@@ -23,7 +25,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeTailWindCss />} />
           <Route path="/login" element={<LoginTailWindCss />} />
-          <Route path="/user-register" element={<UserTailWindCss />} />
+          <Route path="/user-register" element={<UserRegisterTailWindCss />} />
+          <Route path="/users" element={<UserListTailWindCss />} />
+          <Route path="/user-edit/:id" element={<UserEditTailWindCss />} />
           <Route
             path="/products/"
             element={
@@ -40,14 +44,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/products/pizza/:id"
-            element={
-              <ProtectedRoute>
-                <Pizza />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/products/pizza/:id" element={<Pizza />} />
           <Route
             path="/help-info"
             element={

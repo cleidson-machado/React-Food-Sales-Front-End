@@ -1,10 +1,25 @@
 import { useState } from "react";
 import userRegister from "../core/services/user/user-register";
+import { useNavigate } from "react-router-dom";
 
 //#### I PREFER TO USE IT LIKE THIS THAN FROM event.target.name FROM HTML...
 //EXAMPLE event.target.name FROM HTML: https://blog.logrocket.com/how-to-use-axios-post-requests/
 
-function UserTailWindCss() {
+//#### The New Age Axios Setup: Separation of Concerns in React
+// LINK: https://www.dhiwise.com/post/the-new-age-axios-aetup-separation-of-concerns-in-react
+// LINK: https://axios-http.com/docs/multipart
+
+//#### React best practices and patterns
+// LINK: https://devsmitra.medium.com/react-best-practices-and-patterns-to-reduce-code-part-3-543b8cef9954
+// LINK: https://blog.bitsrc.io/api-call-in-react-using-axios-handling-complicated-scenarios-befff1655abc
+
+//#### To Layout TailwinCss
+//Example_01: https://flowbite.com/docs/components/tables
+//Example_02: https://flowbite.com/docs/components/forms
+
+function UserRegisterTailWindCss() {
+  const navigate = useNavigate();
+
   const [registerData, setRegisterData] = useState({
     name: "",
     surname: "",
@@ -45,6 +60,7 @@ function UserTailWindCss() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await userRegister(registerData);
+    navigate("/");
   };
 
   return (
@@ -56,14 +72,14 @@ function UserTailWindCss() {
         <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
           <div className="mb-5">
             <label
-              htmlFor="name-id"
+              htmlFor="nameid"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Name
             </label>
             <input
               type="text"
-              id="name-id"
+              id="nameid"
               onChange={handleName}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Type Your Name"
@@ -72,14 +88,14 @@ function UserTailWindCss() {
           </div>
           <div className="mb-5">
             <label
-              htmlFor="surname-id"
+              htmlFor="surnameid"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Surname
             </label>
             <input
               type="text"
-              id="surname-id"
+              id="surnameid"
               onChange={handleSurname}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Type Your Surname"
@@ -88,14 +104,14 @@ function UserTailWindCss() {
           </div>
           <div className="mb-5">
             <label
-              htmlFor="cpf-id"
+              htmlFor="cpfid"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               CPF
             </label>
             <input
               type="text"
-              id="cpf-id"
+              id="cpfid"
               onChange={handleCpf}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Type Your CPF Number"
@@ -105,14 +121,14 @@ function UserTailWindCss() {
 
           <div className="mb-5">
             <label
-              htmlFor="email-id"
+              htmlFor="emailid"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your email
             </label>
             <input
               type="email"
-              id="email-id"
+              id="emailid"
               onChange={handleEmail}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="nome@seuemail.com"
@@ -121,14 +137,14 @@ function UserTailWindCss() {
           </div>
           <div className="mb-5">
             <label
-              htmlFor="password-id"
+              htmlFor="passwordid"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your password
             </label>
             <input
               type="password"
-              id="password-id"
+              id="passwordid"
               onChange={handlePassword}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
@@ -147,4 +163,4 @@ function UserTailWindCss() {
   );
 }
 
-export default UserTailWindCss;
+export default UserRegisterTailWindCss;

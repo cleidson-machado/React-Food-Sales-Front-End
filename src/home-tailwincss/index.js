@@ -8,7 +8,7 @@ const HomeTailWindCss = () => {
           | Home Page |
         </h1>
         <p className="font-semibold text-xl ">
-          Teste de Envio de parâmetros via rotas
+          Teste de Envio de parâmetros via rotas - Tarefa 03
         </p>
         <Link
           to="/products/pizza/100"
@@ -29,6 +29,22 @@ const HomeTailWindCss = () => {
           className="text-blue-600 underline visited:text-blue-600 font-bold"
         >
           <span>Teste Pizza ID Num Cod. Maior</span>
+        </Link>
+        <br />
+        <br />
+        <p className="font-semibold text-xl ">Links List Tarefa 04</p>
+        <Link
+          to="/user-register"
+          className="text-blue-600 underline visited:text-blue-600 font-bold"
+        >
+          <span>Tela / View Cadastro de Usuário</span>
+        </Link>
+        <br />
+        <Link
+          to="/users"
+          className="text-blue-600 underline visited:text-blue-600 font-bold"
+        >
+          <span>Tela / View Listagem de Usuário</span>
         </Link>
       </div>
     </>
